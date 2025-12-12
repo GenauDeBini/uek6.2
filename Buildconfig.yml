@@ -11,9 +11,10 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        name: "nodejs:18-ubi8"
+        name: "nginx:1.24-ubi9"
         namespace: openshift
   output:
     to:
       kind: ImageStreamTag
       name: webapp:latest
+oc start-build webapp-build --follow
