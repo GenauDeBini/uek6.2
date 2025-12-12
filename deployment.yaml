@@ -19,5 +19,5 @@ spec:
         - name: html-openshift-app
           ports:
             - containerPort: 8080
-          image: ghcr.io/genaudebini/html-openshift-app:v1
+          image: ghcr.io/genaudebini/html-openshift-app:latest
           imagePullPolicy: Always
