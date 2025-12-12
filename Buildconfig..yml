@@ -1,0 +1,22 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: html-openshift-build
+spec:
+  source:
+    git:
+      uri: https://github.com/GenauDeBini/uek6.2.git
+    type: Git
+
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: nginx:latest
+        namespace: openshift
+
+  output:
+    to:
+      kind: ImageStreamTag
+      name: html-openshift-app:latest
