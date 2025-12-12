@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: webapp-build
+spec:
+  source:
+    git:
+      uri: "https://github.com/GenauDeBini/uek6.2.git"
+      ref: main
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: "nodejs:18-ubi8"
+        namespace: openshift
+  output:
+    to:
+      kind: ImageStreamTag
+      name: webapp:latest
